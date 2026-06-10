@@ -1,0 +1,2 @@
+python experiments/calc_nearest_neighbours_ffhq.py --ema --ae_load_dir vqgan_ffhq --ae_load_step 100000 --dataset ffhq \
+        --log_dir experiments_ffhq_nearest --load_dir absorbing_ffhq --load_step 300000 --sampler absorbing  --temp 0.9 --sample_steps 30 --n_components 3 --c_weight 3 --batch_size 8

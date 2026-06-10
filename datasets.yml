@@ -1,0 +1,6 @@
+- dataset: ffhq
+  path: "/datasets/FFHQ"
+- dataset: clevr_pos
+  path: null # we specify these in code
+- dataset: clevr_rel
+  path: null # we specify these in code

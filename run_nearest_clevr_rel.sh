@@ -1,0 +1,2 @@
+python experiments/calc_nearest_neighbours_clevr_rel.py --ema --ae_load_dir vqgan_clevr_rel --ae_load_step 20000 --dataset clevr_rel \
+--log_dir experiments_clevr_rel_nearest --load_dir absorbing_clevr_rel --load_step 300000 --sampler absorbing  --temp 0.9 --sample_steps 30 --n_components 3 --c_weight 3 --batch_size 8

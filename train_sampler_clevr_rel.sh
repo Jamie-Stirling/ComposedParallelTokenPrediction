@@ -1,0 +1,1 @@
+python train_sampler.py --ema --ae_load_dir vqgan_clevr_rel --ae_load_step 20000 --dataset clevr_rel --log_dir absorbing_clevr_rel --load_dir absorbing_clevr_rel --load_step 0 --sampler absorbing --steps_per_display_output 500 --sample_steps 10 --temp 0.9 --train_steps 300001

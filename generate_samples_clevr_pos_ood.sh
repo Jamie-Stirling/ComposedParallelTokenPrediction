@@ -1,0 +1,2 @@
+python experiments/get_samples_clevr_pos_ood.py --ema --ae_load_dir vqgan_clevr_pos --ae_load_step 20000 --dataset clevr_pos \
+ --log_dir experiments_clevr_pos_ood --load_dir absorbing_clevr_pos --load_step 300000 --sampler absorbing  --temp 0.8 --sample_steps 256 --n_components 1

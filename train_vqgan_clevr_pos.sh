@@ -1,0 +1,1 @@
+python train_vqgan.py --ema --dataset clevr_pos --log_dir vqgan_clevr_pos --load_dir vqgan_clevr_pos --steps_per_display_output 500 --batch_size 20 --load_step 0 --train_steps 20001

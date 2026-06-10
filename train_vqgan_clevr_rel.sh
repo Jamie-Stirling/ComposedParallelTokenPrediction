@@ -1,0 +1,1 @@
+python train_vqgan.py --ema --dataset clevr_rel --log_dir vqgan_clevr_rel --load_dir vqgan_clevr_rel --steps_per_display_output 500 --batch_size 20 --load_step 0 --train_steps 20001

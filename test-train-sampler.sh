@@ -1,0 +1,1 @@
+python train_sampler.py --ema --ae_load_dir vqgan_ffhq --ae_load_step 1400000 --dataset ffhq --log_dir test --load_dir test --load_step 1400000 --sampler absorbing --steps_per_display_output 1000 --temp 0.8
