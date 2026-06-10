@@ -34,6 +34,14 @@ After downloading the relevant files, place the following in `/datasets/` (alter
 
 The data partitions (image IDs) used for evaluation on FFHQ are in `ffhq_<N_COMPONENTS>_partition.txt`. The corresponding images are used for computing accuracy and FID. These were chosen (random uniform without replacement) from the FFHQ dataset.
 
+## Pre-trained models
+
+We provide pre-trained models here: [model download](https://github.com/Jamie-Stirling/ComposedParallelTokenPrediction/releases/tag/model_weights). These can be evaluated to reproduce the quantitative results in the paper.
+
+These should be placed at the project root as `./logs/<model-name>` before running evaluations, e.g. `./logs/vqgan_ffhq`.
+
+Alternatively, the VQ and sampler models can be trained from scratch.
+
 
 ## Classifiers
 
@@ -42,14 +50,6 @@ Classifiers are required to evaluate accuracy for the 3 datasets.
 These can be downloaded here: [classifiers download](https://github.com/Jamie-Stirling/ComposedParallelTokenPrediction/releases/tag/classifiers).
 
 These should be placed at the project root as `./classifier/classifiers/<classifier-name>` before running accuracy evaluations.
-
-## Pre-trained models
-
-We provide pre-trained models here: [model download](https://github.com/Jamie-Stirling/ComposedParallelTokenPrediction/releases/tag/model_weights). These can be evaluated to reproduce the quantitative results in the paper.
-
-These should be placed at the project root as `./logs/<model-name>` before running evaluations, e.g. `./logs/vqgan_ffhq`.
-
-Alternatively, the VQ and sampler models can be trained from scratch.
 
 
 ## VQ-VAE/VQ-GAN Training
