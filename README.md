@@ -45,7 +45,7 @@ These should be placed at the project root as `./classifier/classifiers/<classif
 
 ## Pre-trained models
 
-We provide pre-trained models here: [model download](). These can be evaluated to reproduce the quantitative results in the paper.
+We provide pre-trained models here: [model download](https://github.com/Jamie-Stirling/ComposedParallelTokenPrediction/releases/tag/model_weights). These can be evaluated to reproduce the quantitative results in the paper.
 
 These should be placed at the project root as `./logs/<model-name>` before running evaluations, e.g. `./logs/vqgan_ffhq`.
 
