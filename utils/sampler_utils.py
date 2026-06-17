@@ -1,8 +1,10 @@
 import os
 import torch
 from tqdm import tqdm
+
+from models.absorbing_diffusion import ComposedAbsorbingDiffusion
 from .log_utils import save_latents, log
-from models import Transformer, AbsorbingDiffusion, AutoregressiveTransformer
+from models import Transformer, ComposedAbsorbingDiffusion, AutoregressiveTransformer
 
 from text_helper import clevr_rel_to_text
 
@@ -13,11 +15,11 @@ def get_sampler(H, embedding_weight):
         denoise_fn = Transformer(H).cuda()
 
         if H.dataset == "clevr":
-            sampler = AbsorbingDiffusion(
+            sampler = ComposedAbsorbingDiffusion(
                 H, denoise_fn, H.codebook_size + 15, embedding_weight
             )
         else:
-            sampler = AbsorbingDiffusion(
+            sampler = ComposedAbsorbingDiffusion(
                 H, denoise_fn, H.codebook_size, embedding_weight
             )
 

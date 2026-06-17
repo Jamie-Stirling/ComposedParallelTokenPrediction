@@ -13,7 +13,6 @@ def normalize(in_channels):
     )
 
 
-@torch.jit.script
 def swish(x):
     return x * torch.sigmoid(x)
 

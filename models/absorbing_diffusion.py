@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 
 class ComposedAbsorbingDiffusion(nn.Module):
-    def __init__(self, H, transformer, embedding_weight):
+    def __init__(self, H, transformer, mask_id, embedding_weight):
         """
         Args:
             H: A config data class containing the fields referenced below
@@ -19,6 +19,7 @@ class ComposedAbsorbingDiffusion(nn.Module):
         self.latent_shape = H.latent_shape
         self.emb_dim = H.emb_dim
         self.codebook_size = H.codebook_size
+        self.mask_id = mask_id
         self.embedding_weight = embedding_weight
         self.embedding_weight.requires_grad = (
             False  # Freeze embeddings as they are in the VQ codebook
@@ -38,6 +39,16 @@ class ComposedAbsorbingDiffusion(nn.Module):
         self.n_samples = H.batch_size
         self.loss_type = H.loss_type
         self.mask_schedule = H.mask_schedule
+        
+        self.register_buffer(
+            "loss_history", torch.zeros(self.num_timesteps + 1, device="cuda")
+        )
+        self.register_buffer(
+            "Lt_history", torch.zeros(self.num_timesteps + 1, device="cuda")
+        )
+        self.register_buffer(
+            "Lt_count", torch.zeros(self.num_timesteps + 1, device="cuda")
+        )
 
         assert self.mask_schedule in ["random", "fixed"]
 
